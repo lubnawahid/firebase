@@ -81,9 +81,9 @@ class _Screen2State extends State<Screen2> {
               ElevatedButton(
                 onPressed: () async {
                   FirebaseService firebaseservice = FirebaseService();
-                  await FirebaseService.login(
-                      email: emailController.text,
-                      password: passwordController.text,
+                   FirebaseService().login(
+                      email: emailController.text.trim(),
+                      password: passwordController.text.trim(),
                   );
                    Navigator.push(context, MaterialPageRoute(builder: (context) => Screen3(email: emailController.text)));
                 },

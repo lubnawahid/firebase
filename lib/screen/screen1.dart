@@ -97,10 +97,10 @@ class _Screen1State extends State<Screen1> {
               ElevatedButton(
                 onPressed: () async {
                   FirebaseService firebaseservice = FirebaseService();
-                  await FirebaseService.register(
+                   FirebaseService().register(
                     username: nameController.text,
-                    email: emailController.text,
-                    password: passwordController.text,
+                    email: emailController.text.trim(),
+                    password: passwordController.text.trim(),
                     confirmpassword: confirmpasswordController.text,
                   );
 
